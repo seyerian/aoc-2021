@@ -1,43 +1,39 @@
 class Aoc2021::Two < Aoc2021::Solution
   def parse_input(file)
-    File.read_lines(file)
+    InputParsers.pattern(file, /\A(\w+) (\d+)\z/) do |m|
+      {
+        dir: m[1],
+        mag: m[2].to_i32
+      }
+    end
   end
 
   def part1(input)
-    d = 0
-    x = 0
-    input.each do |s|
-      s = s.split(" ")
-      dir = s[0]
-      n = s[1].to_i32
-      case dir
+    d = x = 0
+    input.each do |i|
+      case i[:dir]
       when "forward"
-        x += n
+        x += i[:mag]
       when "down"
-        d += n
+        d += i[:mag]
       when "up"
-        d -= n
+        d -= i[:mag]
       end
     end
     d * x
   end
 
   def part2(input)
-    a = 0
-    d = 0
-    x = 0
-    input.each do |s|
-      s = s.split(" ")
-      dir = s[0]
-      n = s[1].to_i32
-      case dir
+    d = x = a = 0
+    input.each do |i|
+      case i[:dir]
       when "forward"
-        x += n
-        d += a * n
+        x += i[:mag]
+        d += a * i[:mag]
       when "down"
-        a += n
+        a += i[:mag]
       when "up"
-        a -= n
+        a -= i[:mag]
       end
     end
     d * x
