@@ -8,5 +8,6 @@ class Aoc2021::One < Aoc2021::Solution
   end
 
   def part2(input)
+    input.each.cons(3).map(&.sum).each.cons_pair.count { |p| p[0] < p[1] }
   end
 end

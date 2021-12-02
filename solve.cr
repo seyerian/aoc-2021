@@ -4,3 +4,4 @@ ENV["DEBUG"] = "true"
 
 s = Aoc2021::One.new
 puts s.part1(s.real_input)
+puts s.part2(s.real_input)
