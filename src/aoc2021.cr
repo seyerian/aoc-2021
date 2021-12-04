@@ -1,7 +1,9 @@
+def debug?
+  ENV.has_key?("DEBUG") && ENV["DEBUG"]
+end
+
 def debug(*args)
-  if ENV.has_key?("DEBUG") && ENV["DEBUG"]
-    puts *args
-  end
+  puts *args if debug?
 end
 
 module Aoc2021
