@@ -1,6 +1,6 @@
 require "../spec_helper"
 
-describe Aoc2021::Six do
+describe Aoc2021::Seven do
   describe "#part1" do
     it "equals 333755" do
       s7.part1(s7.real_input).should eq 333755
