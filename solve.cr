@@ -2,8 +2,8 @@ require "./src/aoc2021"
 
 ENV["DEBUG"] = "true"
 
-s = Aoc2021::Eight.new
-#s.solution
+s = Aoc2021::Nine.new
+s.solution
 #puts s.part1(s.example_input)
 #puts s.part1(s.real_input)
 #puts s.part2(s.example_input)
