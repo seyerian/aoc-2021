@@ -6,6 +6,10 @@ def debug(*args)
   puts *args if debug?
 end
 
+def debug_pp(arg)
+  pp arg if debug?
+end
+
 module Aoc2021
   VERSION = "0.1.0"
 
