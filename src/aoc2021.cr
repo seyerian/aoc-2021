@@ -46,3 +46,4 @@ end
 require "./solution"
 require "./solutions/*"
 require "./helpers/*"
+require "./helpers/map"
