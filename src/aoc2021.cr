@@ -10,6 +10,24 @@ def debug_pp(arg)
   pp arg if debug?
 end
 
+def debug_buffered(arg, print = false)
+  STDOUT.sync = false
+  STDOUT.flush_on_newline = false
+  if print
+    return if arg.nil?
+    arg = arg.to_s if arg.is_a?(Char)
+    STDOUT.printf(arg)
+  else
+    STDOUT.puts(arg)
+  end
+end
+
+def debug_flush
+  STDOUT.flush
+  STDOUT.sync = true
+  STDOUT.flush_on_newline = true
+end
+
 def debug_i(*args) # interactive
   return unless debug?
   puts *args

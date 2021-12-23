@@ -1,6 +1,6 @@
 class Aoc2021::Fifteen < Aoc2021::Solution
   def parse_input(file)
-    Map.new(InputParsers.map(file))
+    IntMap.new(InputParsers.map(file))
   end
 
   #UNREACHABLE = (Int64::MAX / 2).to_i64
@@ -33,7 +33,7 @@ class Aoc2021::Fifteen < Aoc2021::Solution
   end
 
   # A* pathfind
-  def find_path(map : Map, start : Coord, finish : Coord)
+  def find_path(map : IntMap, start : Coord, finish : Coord)
     visited = Array(PathNode).new
     unvisited = Array(PathNode).new
 
@@ -115,7 +115,7 @@ class Aoc2021::Fifteen < Aoc2021::Solution
   end
 
   def part2(map)
-    larger_map = Map.new(map.width * 5, map.height * 5)
+    larger_map = IntMap.new(map.width * 5, map.height * 5)
 
     map.each do |val, coords|
       (0..4).each do |y|
