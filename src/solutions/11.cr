@@ -1,7 +1,7 @@
-require "../helpers/map"
+require "../helpers/int_map"
 
 class Aoc2021::Eleven < Aoc2021::Solution
-  class Octopuses < Map
+  class Octopuses < IntMap
     property flashes
     def initialize(map : Array(Array(Char)))
       super(map)
